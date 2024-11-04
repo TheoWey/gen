@@ -64,11 +64,15 @@ if exist include\ (
 )
 
 :importmkfile
-if exist makefile (
-    Goto end
+if exist generique.mk (
+    rename "generique.mk" "makefile"
 ) else (
-    copy "C:\Users\weyth\OneDrive\Theo\cours\CESI\a1\info\cpp\generique.mk" "%~dp0makefile"
-    Goto end
+    if exist makefile (
+        Goto end
+    ) else (
+        copy "C:\Users\weyth\OneDrive\Theo\cours\CESI\a1\info\cpp\generique.mk" "%~dp0makefile"
+        Goto end
+    )
 )
 
 :end
