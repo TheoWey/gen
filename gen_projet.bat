@@ -41,18 +41,19 @@ if exist include\ (
             echo #ifndef MAIN_H
             echo #define MAIN_H
             echo.
+            echo #pragma region    //declaration des variables
+            echo.
+            echo.
+            echo.
+            echo #pragma endregion //declaration des variables
+            echo.
             echo #pragma region    // declaration des fonctions
             echo.
             echo void init(void^);
             echo void loop(void^);
             echo.
             echo #pragma endregion // declaration des fonctions
-            echo.
-            echo #pragma region    //declaration des variables
-            echo.
-            echo.
-            echo.
-            echo #pragma endregion //declaration des variables
+
             echo #endif
         )>include\main.h
         Goto importmkfile
