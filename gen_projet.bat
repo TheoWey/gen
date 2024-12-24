@@ -6,17 +6,20 @@ if exist src\ (
         Goto creation_include
     ) else (
         (   
-            echo #include"main.h"
+            echo #include "main.h"
             echo.
             echo int main(void^)^{
-            echo    printf("hello world"^);
+            echo    init(^);
+            echo    loop(^);
             echo ^}
             echo.
             echo void init(void^)^{
-            echo.   
+            echo.   printf("init ok"^);
             echo ^}
-            echo void loop(void^)^{;
-            echo.   
+            echo void loop(void^)^{
+            echo.   while(1^){
+            echo.       printf("loop ok"^);
+            echo.   ^}
             echo ^}
         )>src\main.cc
         Goto creation_include
@@ -33,8 +36,8 @@ if exist include\ (
     ) else (
         (   
             echo #pragma region    //librairie externes
-            echo #include "stdio.h"
-            echo #include "stdlib.h"
+            echo #include ^<stdio.h^>
+            echo #include ^<stdlib.h^>
             echo #include ^<cstdint^>
             echo #pragma endregion //librairie externes
             echo.
